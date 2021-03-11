@@ -22,7 +22,6 @@ describe ShortLinksController do
   describe 'post' do
     let(:short_link) {create(:short_link)}
     let(:valid_url) { 'https://www.fakegoogle.com' }
-
     context 'with a valid request' do
       describe 'when no short_link with the same id and url exists' do
         let(:request) { post :create, params: { user_id: short_link.user_id + 1, full_url: valid_url}

@@ -1,6 +1,7 @@
 class ShortLink < ApplicationRecord
   validates :user_id, presence: true
-  validates :full_url, presence: true, uniqueness: { scope: :user_id }
+  validates :full_url, presence: true, uniqueness: { scope: :user_id,
+    message: 'A shortlink already exists for that user and URL' }
   validates :full_url, format: { with: URI::regexp,
     message: 'Please provide a valid url with protocol' }
 
