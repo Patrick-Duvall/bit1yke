@@ -9,15 +9,17 @@ RSpec.describe ShortLink, type: :model do
   end
 
   describe 'class methods' do
-
+    it '#find_by_slug finds a ShortLink by its slug' do
+      expect(described_class.find_by_slug(subject.slug)).to eq(subject)
+    end
   end
 
   describe 'instance methods' do
-    it '.slug ' do
+    it '.slug shows a ShortLinks slug from its id' do
       expect(subject.slug).to eq(subject.id.to_s(36))
     end
-    it '.short_link' do
-      expect(subject.short_link).to eq(ENV["DOMAIN_NAME"] + subject.id.to_s(36))
+    it '.short_link concatenates the url_base and slug' do
+      expect(subject.short_link).to eq(ENV["DOMAIN_NAME"] + subject.slug)
     end
   end
 end
