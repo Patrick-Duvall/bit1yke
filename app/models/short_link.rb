@@ -1,6 +1,8 @@
 class ShortLink < ApplicationRecord
   validates :user_id, presence: true
   validates :full_url, presence: true, uniqueness: { scope: :user_id }
+  validates :full_url, format: { with: URI::regexp,
+    message: 'Please provide a valid url with protocol' }
 
   def self.find_by_slug(slug)
     id = slug.to_i(36)

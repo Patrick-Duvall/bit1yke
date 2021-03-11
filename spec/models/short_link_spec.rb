@@ -6,6 +6,12 @@ RSpec.describe ShortLink, type: :model do
     it { should validate_presence_of(:user_id) }
     it { should validate_presence_of(:full_url) }
     it { should validate_uniqueness_of(:full_url).scoped_to(:user_id) }
+
+    it 'validates format of email' do
+      short_link = build(:short_link, user_id: subject.user_id, full_url: 'no good')
+      expect(short_link.invalid?)
+      expect(short_link.errors.full_messages).to eq(['Full url Please provide a valid url with protocol'])
+    end
   end
 
   describe 'class methods' do
