@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ShortLinksController do
   describe 'show' do
-    context 'with a valid shortlink' do
+    context 'with a valid short_link id' do
       let(:short_link) { create(:short_link) }
       let(:request) {get :show, params: {id: short_link.slug}}
       it 'redirects to a long link' do
@@ -11,7 +11,7 @@ describe ShortLinksController do
       end 
     end
 
-    context 'with an invalid shortlink' do
+    context 'when no corresponding short_link exists' do
       let(:request) {get :show, params: {id: -1}}
       it 'returns 404' do
         expect(request.status).to eq(404)
