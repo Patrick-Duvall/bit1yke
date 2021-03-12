@@ -1,10 +1,13 @@
 # Bitlyke
 
-Bitlyke is a link shortener similar to bitly. I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience.
-
+Bitlyke is a link shortener similar to bitly. I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience following best practices as I understand them.
 ##### Overview
 
-A user can post a `user_id` and a `full_url` to a shortening endpoint, which returns to them a shortened link. If this link is clicked, a visit to that link is recorded and the user is redirected to the `full_url` associated with that link. The number of times a link has been clicked can be accessed by hitting an analytics endpoint and passing in the slug of a short_link.
+A user can post a `user_id` and a `full_url` to a shortening endpoint, which returns to them a shortened link.
+
+If this link is clicked, a visit to that link is recorded and the user is redirected to the `full_url` associated with that link.
+
+The number of times a link has been clicked can be accessed by hitting an analytics endpoint and passing in the slug of a short_link.
 
 Shortened links are uniquely scoped to users, which is to say two different users could create a `short_link` of the same url but would each receive a `short_link` with a unique slug.
 
@@ -13,7 +16,7 @@ Shortened links are uniquely scoped to users, which is to say two different user
 - [Short Link Redirect](#short-link-redirect)
 - [Short Link Show](#short-link-show)
 
-Bit1yke is currently deployed in production at https://bit1yke.herokuapp.com/. To tryout these endpoints in production you should format your requests like `https://bit1yke.herokuapp.com/analytics/:id`
+Bit1yke is currently deployed in production at https://bit1yke.herokuapp.com/. To tryout these endpoints in production you should format your requests like `https://bit1yke.herokuapp.com/analytics/:id`. [Follow These Steps](#running-on-your-local-machine) If you would prefer running the project locally.
 
 ### Short Link Create 
 ###### URL: /short_links | Method: POST | Required Params: "user_id", "full_url"
@@ -35,7 +38,6 @@ Response:
 ```
 This endpoint renders model level errors if a resource fails to create. For example a request with no params:
 ```json
-POST /short_links
 Request Params:{}
 
 Response:
@@ -80,10 +82,3 @@ DOMAIN_NAME="http://localhost:3000/"
 5. `$ rails db:create`  to create dev and test databases
 6. Run the test suite with `$ bundle exec rspec`, some tests will fail if ENV['DOMAIN_NAME'] is not set
 7. Start a local server with `$ rails s` -- access in your browser or Postman at `localhost:3000`
-
-## Built using
-- Rails 5.2.x 
-- Ruby 2.6.x
-- RSPEC 3.1.x
-- PostgreSQL database
-
