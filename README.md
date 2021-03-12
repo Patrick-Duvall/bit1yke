@@ -9,9 +9,9 @@ A user can post a `user_id` and a `full_url` to a shortening endpoint, which ret
 Shortened links are uniquely scoped to users, which is to say two different users could create a `short_link` of the same url but would each receive a `short_link` with a unique slug.
 
 # Endpoints
-[Short Link Create](#short-link-create)
-[Short Link Redirect](#short-link-redirect)
-[Short Link Show](#short-link-show)
+- [Short Link Create](#short-link-create)
+- [Short Link Redirect](#short-link-redirect)
+- [Short Link Show](#short-link-show)
 
 Bit1yke is currently deployed in production at https://bit1yke.herokuapp.com/. To tryout these endpoints in production you should format your requests like `https://bit1yke.herokuapp.com/analytics/:id`
 
@@ -76,10 +76,10 @@ Response:
 ```yml
 DOMAIN_NAME="http://localhost:3000/"
 ```
-4a. Install [Postgresql](https://www.postgresql.org/) if you do not have it.
-4b. `$ rails db:create`  to create dev and test databases
-1. Run the test suite with `$ bundle exec rspec`, some tests will fail if ENV['DOMAIN_NAME'] is not set
-1. Start a local server with `$ rails s` -- access in your browser or Postman at `localhost:3000`
+4. Install [Postgresql](https://www.postgresql.org/) if you do not have it.
+5. `$ rails db:create`  to create dev and test databases
+6. Run the test suite with `$ bundle exec rspec`, some tests will fail if ENV['DOMAIN_NAME'] is not set
+7. Start a local server with `$ rails s` -- access in your browser or Postman at `localhost:3000`
 
 ## Built using
 - Rails 5.2.x 
