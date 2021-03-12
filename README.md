@@ -10,11 +10,10 @@ At a high level, A user can post a `user_id` and a `full_url` to a shortening en
 
 Bit1yke is currently deployed in production at https://bit1yke.herokuapp.com/. To tryout these endpoints in production you should format your requests like `https://bit1yke.herokuapp.com/analytics/:id`
 
-### POST /short_links
-
+### Create Short Link
+###### URL: /short_links | Method: POST | Required Params: "user_id", "full_url"
 The endpoint to create a short_link. It takes a `user_id` and a `full_url` and returns a short_link in the following format:
 ```json
-POST /short_links
 Request Params:
 {
     "user_id": 1,
@@ -44,19 +43,18 @@ Response:
 }
 ```
 
-### GET /:id
+### Redirect To Full Url
+###### URL: /:id | Method: POST | Required Params: "id"[ID is the slug of a short_link]
 
 The endpoint to redirect from a `short_link` to a full url. I chose to put this path at the root of the application because it makes it very simple to generate a short_link in the following format: `https://bit1yke.herokuapp.com/1d3`
 
-This endpoint works by incrementing a `short_link`'s `visit_count` then redirecting to that `short_link`'s `full url`. For example, if you click https://bit1yke.herokuapp.com/1 you will be redirected to "https://www.google.com", the full_url for that short_link.
+This endpoint works by incrementing a `short_link`'s `visit_count` then redirecting to that `short_link`'s `full url`. For example, if you click https://bit1yke.herokuapp.com/1 you will be redirected to "https://www.google.com", the full_url for that short_link and that link's `visit_count` will be incremented.
 
 
 ### GET /analytics/:id
-
-This endpoint fetches the information for a 'short_link' inlcluding all information about that link. For example:
+###### URL: /analytics/:id | Method: GET | Required Params: "id"[ID is the slug of a short_link]
+This endpoint fetches the all information for a 'short_link' For in the format:
 ```json
-GET analytics/1
-
 Response: 
 {
     "short_link": "https://bit1yke.herokuapp.com/1",
