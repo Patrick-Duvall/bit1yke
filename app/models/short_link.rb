@@ -1,5 +1,6 @@
 class ShortLink < ApplicationRecord
   validates :user_id, presence: true
+  validates :visit_count, presence: true
   validates :full_url, presence: true, uniqueness: { scope: :user_id,
     message: 'A shortlink already exists for that user and URL' }
   validates :full_url, format: { with: URI::regexp,
@@ -16,5 +17,9 @@ class ShortLink < ApplicationRecord
 
   def short_link
     ENV["DOMAIN_NAME"] + slug
+  end
+
+  def visit
+    update(visit_count: self.visit_count +=1)
   end
 end
