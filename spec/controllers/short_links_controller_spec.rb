@@ -9,6 +9,12 @@ describe ShortLinksController do
         expect(request.status).to eq(302)
         expect(request).to redirect_to(short_link.full_url)
       end 
+
+      it 'increments a short_links visit count' do
+        expect(short_link.visit_count).to eq(0)
+        request
+        expect(short_link.reload.visit_count).to eq(1)
+      end
     end
 
     context 'when no corresponding short_link exists' do
@@ -28,6 +34,9 @@ describe ShortLinksController do
         }
         it 'creates a short_link' do
           expect(request.status).to eq(201)
+          expect(JSON.parse(response.body).keys).to contain_exactly(
+          "short_link", "full_url", "user_id", "visit_count"
+        )
         end
       end
 

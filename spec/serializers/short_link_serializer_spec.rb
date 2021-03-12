@@ -5,7 +5,7 @@ describe ShortLinkSerializer do
 
   describe 'attributes' do
     it 'serializes a short_link' do
-      expect(subject.attributes.keys).to contain_exactly(:short_link, :full_url, :user_id)
+      expect(subject.attributes.keys).to contain_exactly(:short_link, :full_url, :user_id, :visit_count)
     end
   end
 end
