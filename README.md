@@ -1,7 +1,7 @@
 # Bitlyke
 
-Bitlyke is a link shortener similar to bitly. I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience following best practices as I understand them.
-##### Overview
+Bitlyke is a link shortening Ruby on Rails API similar to [bitly](https://bitly.com/). I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience following best practices as I understand them.
+### Overview
 
 A user can post a `user_id` and a `full_url` to a shortening endpoint, which returns to them a shortened link.
 
