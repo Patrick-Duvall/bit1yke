@@ -55,7 +55,7 @@ Response:
 
 The endpoint to redirect from a `short_link` to a full url. I chose to put this path at the root of the application because it makes it very simple to generate a short_link in the following format: `https://bit1yke.herokuapp.com/1d3`
 
-This endpoint works by incrementing a `short_link`'s `visit_count` then redirecting to that `short_link`'s `full url`. For example, if you click https://bit1yke.herokuapp.com/1 you will be redirected to "https://www.google.com", the `full_url` for that `short_link` and that link's `visit_count` will be incremented.
+This endpoint works by incrementing a `short_link`'s `visit_count` then redirecting to that `short_link`'s `full url`. For example, if you click https://bit1yke.herokuapp.com/1 you will be redirected to https://www.google.com, the `full_url` for that `short_link` and that link's `visit_count` will be incremented.
 
 
 ### Short Link Show
