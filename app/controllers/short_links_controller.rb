@@ -18,8 +18,4 @@ class ShortLinksController < ApplicationController
   def short_link_params 
     params.permit(:full_url, :user_id)
   end
-
-  def render_error(resource, status = :unprocessable_entity)
-    render json: { errors: resource.errors.full_messages } , status: status
-  end
 end

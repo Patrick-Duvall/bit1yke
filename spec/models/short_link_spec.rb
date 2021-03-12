@@ -37,7 +37,6 @@ RSpec.describe ShortLink, type: :model do
     end
 
     it '.visit increments a short_links visit count' do
-      
       subject.visit
       expect(subject.reload.visit_count).to eq(1)
     end
