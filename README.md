@@ -1,15 +1,15 @@
-# Bitlyke
+# Bit1yke
 
-Bitlyke is a link shortening Ruby on Rails API similar to [bitly](https://bitly.com/). I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience following best practices as I understand them.
+Bit1yke is a link shortening Ruby on Rails API similar to [bitly](https://bitly.com/). I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience following best practices as I understand them.
 ### Overview
 
 A user can post a `user_id` and a `full_url` to a shortening endpoint, which returns to them a shortened link.
 
 If this link is clicked, a visit to that link is recorded and the user is redirected to the `full_url` associated with that link.
 
-The number of times a link has been clicked can be accessed by hitting an analytics endpoint and passing in the slug of a short_link.
+The number of times a link has been clicked can be accessed by hitting an analytics endpoint and passing in the slug of a `short_link`.
 
-Shortened links are uniquely scoped to users, which is to say two different users could create a `short_link` of the same url but would each receive a `short_link` with a unique slug.
+Shortened links are uniquely scoped to users. Two different users could create a `short_link` of the same url but would each receive a `short_link` with a unique slug.
 
 # Endpoints
 - [Short Link Create](#short-link-create)
