@@ -42,11 +42,7 @@ jobs:
     steps:
       - checkout 
       - ruby/install-deps 
-      # Here we make sure that the secondary container boots 
-      # up before we run operations on the database.
-#       - run:
-#           name: Database Init
-#           command: bundle exec rails db:create --trace
+      # Here we make sure that the secondary container boots up before we run operations on the database.
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
