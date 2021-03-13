@@ -26,15 +26,15 @@ jobs:
       - image: cimg/ruby:2.6.6-node # this is our primary docker image, where step commands run.
       - image: circleci/postgres:11.2-alpine
         environment: # add POSTGRES environment variables.
-          POSTGRES_USER: circleci-demo-ruby
-          POSTGRES_DB: rails_blog_test
+          POSTGRES_USER: bitlyke-user-ruby
+          POSTGRES_DB: bitlyke_test
           POSTGRES_PASSWORD: ""
     # environment variables specific to Ruby/Rails, applied to the primary container.
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
       PGHOST: 127.0.0.1
-      PGUSER: circleci-demo-ruby
+      PGUSER: bitlyke-user-ruby
       PGPASSWORD: ""
       RAILS_ENV: test
       DOMAIN_NAME: "http://localhost:3000/"
@@ -44,9 +44,9 @@ jobs:
       - ruby/install-deps 
       # Here we make sure that the secondary container boots 
       # up before we run operations on the database.
-      - run:
-          name: Database Init
-          command: bundle exec rails db:create --trace
+#       - run:
+#           name: Database Init
+#           command: bundle exec rails db:create --trace
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
