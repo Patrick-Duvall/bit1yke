@@ -11,3 +11,11 @@ jobs:
       - checkout
       - run: gem install bundler:2.2.13
       - run: bundle install
+      - run: bundle exec rspec
+      
+  test:
+    docker:
+      - image: circleci/ruby:2.6.6-stretch-node
+    steps: 
+      - checkout
+      - run bundle exec rspec 
