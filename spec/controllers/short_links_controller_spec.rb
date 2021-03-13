@@ -22,6 +22,15 @@ describe ShortLinksController do
       it 'returns 404' do
         expect(request.status).to eq(404)
       end
+      it 'links to the documentation url' do
+        request
+        expect(parsed_response).to eq(
+          {
+            "message" => "Not Found",
+            "documentation_url" => ENV["DOCUMENTATION_URL"]
+          }
+        )
+      end
     end
   end
 
@@ -34,7 +43,7 @@ describe ShortLinksController do
         }
         it 'creates a short_link' do
           expect(request.status).to eq(201)
-          expect(JSON.parse(response.body).keys).to contain_exactly(
+          expect(parsed_response.keys).to contain_exactly(
           "short_link", "full_url", "user_id", "visit_count"
         )
         end
