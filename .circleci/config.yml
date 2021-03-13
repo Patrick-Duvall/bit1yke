@@ -10,4 +10,4 @@ jobs:
     steps:
       - checkout
       - run: gem install bundler:2.2.13
-      - run: bundle-install
+      - run: bundle install
