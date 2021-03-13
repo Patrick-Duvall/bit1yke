@@ -1,4 +1,4 @@
-# Bit1yke
+# Bit1yke [![Patrick-Duvall](https://circleci.com/gh/Patrick-Duvall/bit1yke.svg?style=svg)](https://app.circleci.com/pipelines/github/Patrick-Duvall/bit1yke)
 
 Bit1yke is a link shortening Ruby on Rails API similar to [bitly](https://bitly.com/). I had built a link shortener in the past but wanted to re-visit the idea with a year of professional coding experience following best practices as I understand them.
 ### Overview
