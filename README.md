@@ -51,7 +51,7 @@ Response:
 ```
 
 ### Short Link Redirect
-###### URL: /:id | Method: POST | Required Params: "id"[ID is the slug of a short_link]
+###### URL: /:id | Method: GET | Required Params: "id"[ID is the slug of a short_link]
 
 The endpoint to redirect from a `short_link` to a full url. I chose to put this path at the root of the application because it makes it very simple to generate a short_link in the following format: `https://bit1yke.herokuapp.com/1d3`
 
