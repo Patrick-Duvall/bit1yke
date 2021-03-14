@@ -5,7 +5,7 @@
   "repository": "https://github.com/Patrick-Duvall/bit1yke",
   "image": "heroku/ruby",
   "scripts": {
-    "postdeploy": "bundle exec rake db:create ; bundle exec rake db:schema:load"
+    "postdeploy": "./bin/heroku/postdeploy.sh"
   },
   "addons": [
     {
