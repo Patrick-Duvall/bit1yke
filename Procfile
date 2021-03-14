@@ -1,0 +1,1 @@
+release: ./bin/heroku/release.sh
