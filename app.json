@@ -19,5 +19,10 @@
         "version": "11"
       }
     }
+  ],
+  "buildpacks": [
+    {
+      "url": "https: //buildpack-registry.s3.amazonaws.com/buildpacks/heroku-community/cli.tgz"
+    }
   ]
 }
