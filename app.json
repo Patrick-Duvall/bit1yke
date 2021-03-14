@@ -4,9 +4,6 @@
   "website": "https://small-sharp-tool.com/",
   "repository": "https://github.com/Patrick-Duvall/bit1yke",
   "image": "heroku/ruby",
-  "scripts": {
-    "release": "./bin/heroku/release.sh"
-  },
   "addons": [
     {
       "plan": "heroku-postgresql",
