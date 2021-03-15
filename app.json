@@ -4,9 +4,6 @@
   "website": "https://small-sharp-tool.com/",
   "repository": "https://github.com/Patrick-Duvall/bit1yke",
   "image": "heroku/ruby",
-  "scripts": {
-    "postdeploy": "./bin/heroku/postdeploy.sh"
-  },
   "env": {
     "HEROKU_APP_NAME": {
       "required": true
@@ -23,9 +20,6 @@
   "buildpacks": [
     {
       "url": "heroku/ruby"
-    },
-    {
-      "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku-community/cli.tgz"
     }
   ]
 }
