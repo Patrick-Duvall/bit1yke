@@ -1,7 +1,6 @@
 {
   "name": "Bit1yke",
   "description": "URL Shortening API",
-  "website": "https://small-sharp-tool.com/",
   "repository": "https://github.com/Patrick-Duvall/bit1yke",
   "image": "heroku/ruby",
   "env": {

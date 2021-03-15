@@ -83,7 +83,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  #Set ENV vars 
+  #Set DOMAIN NAME across pr, staging, prod apps 
   ENV['DOMAIN_NAME'] = "https://#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
