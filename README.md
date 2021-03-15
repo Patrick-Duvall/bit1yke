@@ -1,6 +1,8 @@
 # Bit1yke [![Patrick-Duvall](https://circleci.com/gh/Patrick-Duvall/bit1yke.svg?style=svg)](https://app.circleci.com/pipelines/github/Patrick-Duvall/bit1yke)
 
-Bit1yke is a link shortening Ruby on Rails API similar to [bitly](https://bitly.com/). I had built a link shortener in the past for a code challenge but wanted to re-visit the idea while following best practices.
+Bit1yke is a link shortening Ruby on Rails API similar to [bitly](https://bitly.com/). I had built a link shortener in the past for a code challenge but wanted to re-visit the idea while following best practices. This project is built and auto-deploys using [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines) and [CircleCI](https://app.circleci.com/pipelines/github/Patrick-Duvall/bit1yke).
+
+![asset pipeline picture](/app/assets/images/heroku-pipeline.png)
 ### Overview
 
 A user can post a `user_id` and a `full_url` to a shortening endpoint, which returns to them a shortened link.
